@@ -1,0 +1,82 @@
+body {
+    margin: 0px;
+    font-size: 60px;
+    background-color: antiquewhite;
+}
+
+#main-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: grey;
+}
+
+#main-card {
+    border-radius: 0.5em;
+    position: relative;
+    background-color:white;
+    margin: auto;
+    width: 10em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.grid-row-base {
+}
+
+.grid-row-1-col-1 {
+    grid-column-start: span 1;
+    grid-row-start: span 1;
+    background-color: aquamarine;
+}
+
+.grid-row-1-col-3 {
+    grid-column-start: span 3;
+    grid-row-start: span 1;
+    background-color: aquamarine;
+}
+
+.timespan-item {
+    display: block;
+    margin-bottom: 4em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.5em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.100em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.4em;
+}
+
+input {
+    border: 1px solid grey;
+    font-size: 0.5em;
+    font-weight: bold;
+    width: 4em;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+    padding: 0.25em;
+}
+
+#input-card input {
+    border-radius: 5px
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
