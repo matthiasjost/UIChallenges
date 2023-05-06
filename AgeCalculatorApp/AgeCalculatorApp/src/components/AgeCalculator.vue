@@ -2,22 +2,26 @@
 import { ref } from 'vue'
 import { computed } from 'vue'
 
-const InputDays = ref(1);
-const InputYears = ref(1);
-const InputMonths = ref(1);
+const InputDays = ref(5);
+const InputMonths = ref(7);
+const InputYears = ref(1985);
+
+const CalculatedDays = ref(1);
+const CalculatedYears = ref(1);
+const CalculatedMonths = ref(1);
+
+function onCalculateAge()
+{
+  /*var birthDate = new Date(year, month - 1, day);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();*/
 
 
-const CalculatedYears = computed(() => {
-  return InputYears;
-});
-
-const CalculatedMonths = computed(() => {
-  return InputMonths;
-});
-
-const CalculatedDays = computed(() => {
-  return InputDays;
-});
+  CalculatedDays.value = InputDays.value;
+  CalculatedDays.value = InputDays.value;
+  CalculatedDays.value = InputDays.value;
+  CalculatedDays.value = InputDays.value;
+}
 
 </script>
 
@@ -31,26 +35,30 @@ const CalculatedDays = computed(() => {
             <input v-model="InputDays" type="number" id="days"/>
           </div>
         </div>
-        <div class="grid-row-1-col-1 grid-row-base">
+        <div class="grid-row-1-col-1">
           <div class="form-combo">
             <label for="month">Month</label>
             <input v-model="InputMonths" type="number" id="months"/>
           </div>
         </div>
-        <div class="grid-row-1-col-1 grid-row-base">
+        <div class="grid-row-1-col-1">
           <div class="form-combo">
             <label for="years">Year</label>
             <input v-model="InputYears" type="number" id="years"/>
           </div>
         </div>
-        <div class="grid-row-1-col-3 grid-row-base">
-          <span class="timespan-item">{{ CalculatedDays }} days</span>
+        <div class="grid-row-1-col-3">
+          <div class="line"></div>
         </div>
-        <div class="grid-row-1-col-3 grid-row-base">
-          <span class="timespan-item">{{ CalculatedMonths }} month</span>
+        <div @click="onCalculateAge" class="circle"></div>
+        <div class="grid-row-1-col-3">
+            <span class="timespan-item"><span class="number">{{ CalculatedDays }}</span> days</span>
         </div>
-        <div class="grid-row-1-col-3 grid-row-base">
-          <span class="timespan-item">{{ CalculatedYears }} years</span>
+        <div class="grid-row-1-col-3">
+          <span class="timespan-item"><span class="number">{{ CalculatedMonths }}</span> month</span>
+        </div>
+        <div class="grid-row-1-col-3">
+          <span class="timespan-item"><span class="number">{{ CalculatedYears }}</span> years</span>
         </div>
       </div>
     </div>

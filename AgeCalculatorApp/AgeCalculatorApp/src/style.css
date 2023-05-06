@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
+
 body {
+  font-family: 'Poppins', sans-serif;
   margin: 0px;
   font-size: 60px;
-  background-color: antiquewhite;
+
+}
+
+.circle {
+  height: 1.5em;
+  width: 1.5em;
+  background:hsl(0, 0%, 94%) url("./assets/icon-arrow.svg") no-repeat fixed center center;
+  border-radius: 50%;
 }
 
 #main-container {
   height: 100vh;
   width: 100vw;
-  background-color: grey;
+  background-color: hsl(0, 1%, 44%);
 }
 
+.number {
+  color: hsl(259, 100%, 65%);
+}
 #main-card {
   border-radius: 0.5em;
   position: relative;
@@ -24,30 +38,41 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-}
-
-.grid-row-base {
+  grid-template-rows: 2em 2em 1.5em 1.5em 1.5em;
 }
 
 .grid-row-1-col-1 {
   grid-column-start: span 1;
   grid-row-start: span 1;
-  background-color: aquamarine;
+  background-color: white;
+}
+
+.line {
+  margin-top: 0.8em;
+  width: 120%;
+  height: 2px;
+  background-color: lightgrey;
 }
 
 .grid-row-1-col-3 {
   grid-column-start: span 3;
   grid-row-start: span 1;
-  background-color: aquamarine;
+  background-color: white;
+}
+
+.grid-row-1-col-4 {
+  grid-column-start: span 4;
+  grid-row-start: span 1;
+  background-color: white;
 }
 
 .timespan-item {
   display: block;
   margin-bottom: 4em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.5em;
+  text-transform: lowercase;
+  font-weight: 900;
+  font-size: 1.25em;
+  font-style: italic;
 }
 
 label {
