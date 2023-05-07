@@ -3,9 +3,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0px;
+  margin: 0;
   font-size: 60px;
-
 }
 
 .circle {
@@ -83,7 +82,7 @@ label {
   font-size: 0.4em;
 }
 
-input {
+input[type=number] {
   border: 1px solid grey;
   font-size: 0.5em;
   font-weight: bold;
@@ -91,6 +90,11 @@ input {
   text-transform: uppercase;
   margin-bottom: 2em;
   padding: 0.25em;
+  border-radius: 5px;
+}
+
+input[type=number]:focus {
+  border-color: hsl(259, 100%, 65%);
 }
 
 #input-card input {

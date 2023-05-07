@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { computed } from 'vue'
 
 const InputDays = ref(5);
 const InputMonths = ref(7);
