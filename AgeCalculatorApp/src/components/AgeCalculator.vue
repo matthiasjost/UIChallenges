@@ -14,16 +14,33 @@ const MonthsValidationError = ref("");
 const YearsValidationError = ref("");
 
 function onSubmitForm() {
-    CalculatedDays.value = InputDays.value;
-    CalculatedMonths.value = InputMonths.value;
-    CalculatedYears.value = InputYears.value;
-    InputDays.value = "";
-    InputMonths.value = "";
-    InputYears.value = "";
 
     DaysValidationError.value = "Error";
     MonthsValidationError.value = "Error";
     YearsValidationError.value = "Error";
+
+    const today = new Date();
+
+    debugger;
+
+    const inputYearsInt = parseInt(InputYears.value);
+    const inputMonthsInt = parseInt(InputMonths.value);
+    const inputDaysInt = parseInt(InputDays.value);
+
+    const outputYearsInt = today.getFullYear() - inputYearsInt;
+    const outputMonthsIn = today.getMonth() - inputMonthsInt;
+    const outputDaysInt = today.getDay() - inputDaysInt;
+
+    CalculatedDays.value = String(outputDaysInt);
+    CalculatedMonths.value = String(outputMonthsIn);
+    CalculatedYears.value = String(outputYearsInt);
+
+
+    InputDays.value = "";
+    InputMonths.value = "";
+    InputYears.value = "";
+
+
 }
 
 </script>
