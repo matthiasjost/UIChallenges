@@ -2,120 +2,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  font-size: 60px;
-}
-.form-combo {
-  padding: 0px;
-  margin: 0px;
-}
-.circle {
-  height: 1.5em;
-  width: 1.5em;
-  background: hsl(259, 100%, 65%) url("./assets/icon-arrow.svg") no-repeat fixed center center;
-  border-radius: 50%;
-}
-
-.circle:hover, .circle:active {
-  height: 1.55em;
-  width: 1.55em;
-}
-
-#main-container {
-  height: 100vh;
-  width: 100vw;
-  background-color: hsl(0, 1%, 44%);
-}
-
-.number {
-  color: hsl(259, 100%, 65%);
-}
-
-#main-card {
-  border-radius: 0.5em 0.5em 2.5em 0.5em ;
-  position: relative;
-  background-color:white;
-  margin: auto;
-  width: 10em;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2em 2em 1.5em 1.5em 1.5em;
-}
-
-.grid-row-1-col-1 {
-  grid-column-start: span 1;
-  grid-row-start: span 1;
-  background-color: white;
-}
-
-.line {
-  margin-top: 0.8em;
-  width: 120%;
-  height: 2px;
-  background-color: lightgrey;
-}
-
-.grid-row-1-col-3 {
-  grid-column-start: span 3;
-  grid-row-start: span 1;
-  background-color: white;
-}
-
-.grid-row-1-col-4 {
-  grid-column-start: span 4;
-  grid-row-start: span 1;
-  background-color: white;
-}
-
-.timespan-item {
-  display: block;
-  margin-bottom: 4em;
-  text-transform: lowercase;
-  font-weight: 900;
-  font-size: 1.25em;
-  font-style: italic;
-}
-
-label {
-  display: block;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.4em;
-  margin: 0;
-  padding: 0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 60px;
 }
 
 input[type=number] {
-  border: 1px solid grey;
-  font-size: 0.5em;
-  font-weight: bold;
-  width: 4em;
-  text-transform: uppercase;
-  margin-bottom: 2em;
-  padding: 0.25em;
-  border-radius: 5px;
+    display: block;
+    border: 1px solid grey;
+    font-size: 0.5em;
+    font-weight: bold;
+    width: 3em;
+    text-transform: uppercase;
+    margin-bottom: 0.1em;
+    padding: 0.25em;
+    border-radius: 5px;
 }
 
 input[type=number]:focus {
-  border: hsl(259, 100%, 65%) 1px solid;
+    border: hsl(259, 100%, 65%) 1px solid;
+}
+
+.input-labels {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.2em;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.validation-error {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 0.3em;
+    color: red;
 }
 
 #input-card input {
-  border-radius: 5px
+    border-radius: 5px
+}
+
+.form-combo {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.circle {
+    height: 1.5em;
+    width: 1.5em;
+    background: hsl(259, 100%, 65%) url("./assets/icon-arrow.svg") no-repeat fixed center center;
+    border-radius: 50%;
+}
+
+.circle:hover, .circle:active {
+    height: 1.55em;
+    width: 1.55em;
+}
+
+#main-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(0, 1%, 44%);
+}
+
+.number {
+    color: hsl(259, 100%, 65%);
+}
+
+#main-card {
+    border-radius: 0.5em 0.5em 2.5em 0.5em;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    width: 10em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2em 2em 1.5em 1.5em 1.5em;
+}
+
+.grid-row-1-col-1 {
+    grid-column-start: span 1;
+    grid-row-start: span 1;
+    background-color: white;
+}
+
+.line {
+    margin-top: 0.8em;
+    width: 120%;
+    height: 2px;
+    background-color: lightgrey;
+}
+
+.grid-row-1-col-3 {
+    grid-column-start: span 3;
+    grid-row-start: span 1;
+    background-color: white;
+}
+
+.grid-row-1-col-4 {
+    grid-column-start: span 4;
+    grid-row-start: span 1;
+    background-color: white;
+}
+
+.timespan-item {
+    display: block;
+    margin-bottom: 4em;
+    text-transform: lowercase;
+    font-weight: 900;
+    font-size: 1.25em;
+    font-style: italic;
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
+    font-size: 11px;
+    text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+    color: hsl(228, 45%, 44%);
 }
