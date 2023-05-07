@@ -13,35 +13,54 @@ const DaysValidationError = ref("Error");
 const MonthsValidationError = ref("");
 const YearsValidationError = ref("");
 
+function calculateAge(inputYearsInt: number, inputMonthsInt: number, inputDaysInt: number) {
+    const today = new Date();
+    const birthday = new Date(inputYearsInt, inputMonthsInt - 1, inputDaysInt);
+    let yearDiff = today.getFullYear() - birthday.getFullYear();
+    let monthDiff = today.getMonth() - birthday.getMonth();
+    let dayDiff = today.getDate() - birthday.getDate();
+
+    if (dayDiff < 0) {
+        monthDiff--;
+        const monthDays = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        dayDiff += monthDays;
+    }
+
+    if (monthDiff < 0) {
+        yearDiff--;
+        monthDiff += 12;
+    }
+
+    const outputYearsInt = yearDiff;
+    const outputMonthsInt = monthDiff;
+    const outputDaysInt = dayDiff;
+
+    return { outputYearsInt, outputMonthsInt, outputDaysInt };
+}
+
 function onSubmitForm() {
 
     DaysValidationError.value = "Error";
     MonthsValidationError.value = "Error";
     YearsValidationError.value = "Error";
 
-    const today = new Date();
-
-    debugger;
-
     const inputYearsInt = parseInt(InputYears.value);
     const inputMonthsInt = parseInt(InputMonths.value);
     const inputDaysInt = parseInt(InputDays.value);
 
-    const outputYearsInt = today.getFullYear() - inputYearsInt;
-    const outputMonthsIn = today.getMonth() - inputMonthsInt;
-    const outputDaysInt = today.getDay() - inputDaysInt;
+    const resultValues = calculateAge(inputYearsInt, inputMonthsInt, inputDaysInt);
 
-    CalculatedDays.value = String(outputDaysInt);
-    CalculatedMonths.value = String(outputMonthsIn);
-    CalculatedYears.value = String(outputYearsInt);
-
+    CalculatedDays.value = String(resultValues.outputDaysInt);
+    CalculatedMonths.value = String(resultValues.outputMonthsInt);
+    CalculatedYears.value = String(resultValues.outputYearsInt);
 
     InputDays.value = "";
     InputMonths.value = "";
     InputYears.value = "";
 
-
 }
+
+
 
 </script>
 
@@ -75,13 +94,13 @@ function onSubmitForm() {
                 </div>
                 <div class="circle" @click="onSubmitForm"></div>
                 <div class="grid-row-1-col-3">
-                    <span class="timespan-item"><span class="number">{{ CalculatedDays }}</span> days</span>
+                    <span class="timespan-item"><span class="number">{{ CalculatedYears }}</span> years</span>
                 </div>
                 <div class="grid-row-1-col-3">
                     <span class="timespan-item"><span class="number">{{ CalculatedMonths }}</span> month</span>
                 </div>
                 <div class="grid-row-1-col-3">
-                    <span class="timespan-item"><span class="number">{{ CalculatedYears }}</span> years</span>
+                    <span class="timespan-item"><span class="number">{{ CalculatedDays }}</span> days</span>
                 </div>
             </div>
         </div>
