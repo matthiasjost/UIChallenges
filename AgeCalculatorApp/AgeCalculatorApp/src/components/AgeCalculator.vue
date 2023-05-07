@@ -1,25 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const InputDays = ref(5);
-const InputMonths = ref(7);
-const InputYears = ref(1985);
+const InputDays = ref("");
+const InputMonths = ref("");
+const InputYears = ref("");
 
-const CalculatedDays = ref(1);
-const CalculatedYears = ref(1);
-const CalculatedMonths = ref(1);
+const CalculatedDays = ref("");
+const CalculatedMonths = ref("");
+const CalculatedYears = ref("");
 
-function onCalculateAge()
+function onSubmitForm()
 {
-  /*var birthDate = new Date(year, month - 1, day);
-  var age = today.getFullYear() - birthDate.getFullYear();
-  var m = today.getMonth() - birthDate.getMonth();*/
-
-
   CalculatedDays.value = InputDays.value;
-  CalculatedDays.value = InputDays.value;
-  CalculatedDays.value = InputDays.value;
-  CalculatedDays.value = InputDays.value;
+  CalculatedMonths.value = InputMonths.value;
+  CalculatedYears.value = InputYears.value;
+  InputDays.value = "";
+  InputMonths.value = "";
+  InputYears.value = "";
 }
 
 </script>
@@ -49,7 +46,7 @@ function onCalculateAge()
         <div class="grid-row-1-col-3">
           <div class="line"></div>
         </div>
-        <div @click="onCalculateAge" class="circle"></div>
+        <div @click="onSubmitForm" class="circle"></div>
         <div class="grid-row-1-col-3">
             <span class="timespan-item"><span class="number">{{ CalculatedDays }}</span> days</span>
         </div>
