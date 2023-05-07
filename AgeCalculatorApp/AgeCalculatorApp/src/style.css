@@ -6,12 +6,20 @@ body {
   margin: 0;
   font-size: 60px;
 }
-
+.form-combo {
+  padding: 0px;
+  margin: 0px;
+}
 .circle {
   height: 1.5em;
   width: 1.5em;
-  background:hsl(0, 0%, 94%) url("./assets/icon-arrow.svg") no-repeat fixed center center;
+  background: hsl(259, 100%, 65%) url("./assets/icon-arrow.svg") no-repeat fixed center center;
   border-radius: 50%;
+}
+
+.circle:hover, .circle:active {
+  height: 1.55em;
+  width: 1.55em;
 }
 
 #main-container {
@@ -23,15 +31,16 @@ body {
 .number {
   color: hsl(259, 100%, 65%);
 }
+
 #main-card {
-  border-radius: 0.5em;
+  border-radius: 0.5em 0.5em 2.5em 0.5em ;
   position: relative;
   background-color:white;
   margin: auto;
   width: 10em;
   top: 50%;
   transform: translateY(-50%);
-  padding: 20px;
+  padding: 40px;
 }
 
 .grid {
@@ -76,10 +85,11 @@ body {
 
 label {
   display: block;
-  margin-bottom: 0.100em;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.4em;
+  margin: 0;
+  padding: 0;
 }
 
 input[type=number] {
@@ -94,7 +104,7 @@ input[type=number] {
 }
 
 input[type=number]:focus {
-  border-color: hsl(259, 100%, 65%);
+  border: hsl(259, 100%, 65%) 1px solid;
 }
 
 #input-card input {

@@ -28,15 +28,15 @@ function onCalculateAge()
   <div id="main-container">
     <div id="main-card">
       <div class="grid">
-        <div class="grid-row-1-col-1 grid-row-base">
+        <div class="grid-row-1-col-1">
           <div class="form-combo">
-            <label for="day">Day</label>
+            <label for="days">Day</label>
             <input v-model="InputDays" type="number" id="days"/>
           </div>
         </div>
         <div class="grid-row-1-col-1">
           <div class="form-combo">
-            <label for="month">Month</label>
+            <label for="months">Month</label>
             <input v-model="InputMonths" type="number" id="months"/>
           </div>
         </div>
